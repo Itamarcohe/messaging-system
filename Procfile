@@ -1,1 +1,1 @@
-web: gunicorn messenger.wsgi
+web: gunicorn messenger.wsgi --log-file -
