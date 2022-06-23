@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'c+q(dnc%_gq+joqy6)e-^r(6mwctr3v+htuosdu3^wk)3jh)o4'
-SECRET_KEY = os.environ.get('SECRET_KEY_ABRA')
+SECRET_KEY = 'c+q(dnc%_gq+joqy6)e-^r(6mwctr3v+htuosdu3^wk)3jh)o4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'abra_msg_db',
         'USER': 'postgres',
-        'PASSWORD': os.environ.get('POSTGRES_PASS'),
+        'PASSWORD': '1673495as',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
