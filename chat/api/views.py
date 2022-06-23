@@ -15,7 +15,6 @@ class CreateMessageAPIView(generics.CreateAPIView):
     """
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = CreateMessageSerializer
-
     def perform_create(self, serializer):
         serializer.save(sender=self.request.user)
 
