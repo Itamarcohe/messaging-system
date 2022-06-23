@@ -7,9 +7,11 @@ import os
 load_dotenv()
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY_ABRA')
+# SECRET_KEY = os.getenv('SECRET_KEY_ABRA')
 
+SECRET_KEY = 'c+q(dnc%_gq+joqy6)e-^r(6mwctr3v+htuosdu3^wk)3jh)o4'
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['abra-messaging-system.herokuapp.com', '127.0.0.1']
