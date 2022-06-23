@@ -5,8 +5,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-# BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # SECRET_KEY = os.getenv('SECRET_KEY_ABRA')
 
@@ -117,6 +116,11 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+os.path.join(BASE_DIR, 'static'),
+)
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
