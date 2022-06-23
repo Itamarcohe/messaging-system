@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv['SECRET_KEY']
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['abra-messaging-system.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -38,8 +38,10 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'corsheaders.middleware.CorMiddleware'
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'messenger.urls'
