@@ -9,6 +9,11 @@ User = get_user_model()
 
 
 class CreateMessageAPIView(generics.CreateAPIView):
+    """
+    Write message sender is the logged in user
+    To any other user available including yourself
+    (same like email)
+    """
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = CreateMessageSerializer
 
@@ -17,6 +22,11 @@ class CreateMessageAPIView(generics.CreateAPIView):
 
 
 class MessageAPIView(generics.ListAPIView):
+    """
+    Get all the messages of the logged in user
+    whether read or unread messages
+    whether sender or receiver
+    """
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = MessageSerializer
 
@@ -27,8 +37,12 @@ class MessageAPIView(generics.ListAPIView):
 
 
 class UnReadMessageAPIView(generics.ListAPIView):
+    """
+    Get all the unread messages of the logged in user
+    """
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = MessageSerializer
+
     def get_queryset(self):
         user = self.request.user
         qs = Message.objects.filter(Q(Q(receiver=user) & Q(is_read=False))).order_by("-created_at").distinct()
@@ -36,6 +50,11 @@ class UnReadMessageAPIView(generics.ListAPIView):
 
         
 class MessageDetailsAPIView(generics.RetrieveDestroyAPIView):
+    """
+    Get/Delete Message by a specific Message ID
+    Only messages of the logged in user
+    Can delete whether sender or receiver
+    """
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = MessageSerializer
 

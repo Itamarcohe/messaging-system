@@ -21,8 +21,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'c+q(dnc%_gq+joqy6)e-^r(6mwctr3v+htuosdu3^wk)3jh)o4'
-SECRET_KEY = 'c+q(dnc%_gq+joqy6)e-^r(6mwctr3v+htuosdu3^wk)3jh)o4'
+SECRET_KEY = os.environ.get('SECRET_KEY_ABRA')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'rest_framework',
-
     'accounts.apps.AccountsConfig',
     'chat.apps.ChatConfig',
 ]
@@ -86,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'abra_msg_db',
         'USER': 'postgres',
-        'PASSWORD': '1673495as',
+        'PASSWORD': os.environ.get('POSTGRES_PASS'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

@@ -1,9 +1,11 @@
-import re
 from rest_framework import serializers
 from chat.models import Message
 
 
 class CreateMessageSerializer(serializers.ModelSerializer):
+    """
+    Serializer for writing (post) a message
+    """
 
     sender_username = serializers.CharField(source='sender.username', read_only=True)
     receiver_username = serializers.CharField(source='receiver.username', read_only=True)
@@ -14,6 +16,11 @@ class CreateMessageSerializer(serializers.ModelSerializer):
 
 
 class MessageSerializer(serializers.ModelSerializer):
+
+    """
+    Serializer for retrieving message
+    """
+
     sender_username = serializers.CharField(source='sender.username', read_only=True)
     receiver_username = serializers.CharField(source='receiver.username', read_only=True)
 

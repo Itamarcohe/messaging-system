@@ -13,7 +13,3 @@ urlpatterns = [
     path('write/', CreateMessageAPIView.as_view(), name='write_message'),
 ]
 
-#messages/          -       All messages for the current user
-#messages/unread/   -       All unread messages for the current user
-#messages/<int:id>  -       Messsage details by a specific ID
-#messages/write/    -       To write a new message
