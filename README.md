@@ -1,4 +1,4 @@
-# messaging-system
+# messaging-system API Django & Python 
 
 Messaging system between authenticated users DRF
 
