@@ -1,4 +1,4 @@
-# abra-messaging-system assignment
+# messaging-system
 
 Messaging system between authenticated users DRF
 
